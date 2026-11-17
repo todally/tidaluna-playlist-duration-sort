@@ -1,0 +1,12 @@
+{
+  "name": "@luna/playlist-duration-sort",
+  "description": "Sort loaded playlists in a TIDAL folder by their total running time (shortest or longest first).",
+  "author": {
+    "name": "Community plugin",
+    "url": "https://github.com/Inrixia/luna-template",
+    "avatarUrl": ""
+  },
+  "version": "0.1.0",
+  "main": "./src/index.ts",
+  "type": "module"
+}

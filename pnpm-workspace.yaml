@@ -1,0 +1,6 @@
+packages:
+  - 'plugins/*'
+
+# pnpm 11/12 requires explicit approval for lifecycle scripts.
+allowBuilds:
+  esbuild: true
