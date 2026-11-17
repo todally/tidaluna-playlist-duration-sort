@@ -1,0 +1,42 @@
+
+name: Build and publish TIDALuna plugin
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12.21.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '26'
+
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Build plugin
+        run: pnpm run build
+
+      - name: Verify plugin store
+        run: test -f dist/store.json
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: Latest plugin build
+          make_latest: true
+          files: dist/**
+          fail_on_unmatched_files: true
