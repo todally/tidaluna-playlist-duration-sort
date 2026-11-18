@@ -1,4 +1,4 @@
-# TIDALuna Playlist Duration Sort (experimental)
+# TIDALuna Playlist Duration Sort
 
 Adds two options to the **Sorting** submenu on TIDAL's folder/playlist grid:
 
